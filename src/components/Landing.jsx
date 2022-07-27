@@ -14,26 +14,28 @@ const Landing = () => {
   const dataFetch = (search, e) => {
     e.preventDefault();
     navigate(`/search/${search}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   /* DYNAMIC BACKGROUND FETCHED FROM UNSPLASH */
-  // async function fetchBackground() {
-  //   const { data } = await axios.get(
-  //     `https://api.unsplash.com/photos/random?&query=landscape&orientation=landscape&client_id=${API_KEY}`
-  //   );
-  //     setBackground(data.urls.regular);
-  //     setAuthor(data.user.name);
-  // }
+  async function fetchBackground() {
+    const { data } = await axios.get(
+      `https://api.unsplash.com/photos/random?&query=landscape&orientation=landscape&client_id=${API_KEY}`
+    );
+    setBackground(data.urls.full);
+    setAuthor(data.user);
+    console.log(data.user);
+  }
 
   /* PASTE THIS IN INLINE-STYLE OF HEADER */
   // `url(${background})`
 
-  // React.useEffect(() => {
-  //   fetchBackground();
-  // }, []);
+  React.useEffect(() => {
+    fetchBackground();
+  }, []);
 
   return (
-    <header id="landing">
+    <header id="landing" style={{ backgroundImage: `url(${background})` }}>
       <div className="header__container">
         <div className="header__description">
           <p className="header__para">
@@ -59,9 +61,14 @@ const Landing = () => {
           </p>
         </div>
       </div>
-      <span className="header__img--author">
-        Photo by <span>{author || "X"}</span>
-      </span>
+      {author && (
+        <span className="header__img--author">
+          Photo by{" "}
+          <a href={author.links.html} target="_blank">
+            {author.name || "X"}
+          </a>
+        </span>
+      )}
     </header>
   );
 };

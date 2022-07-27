@@ -7,6 +7,8 @@ import Price from "./ui/Price";
 import Size from "./ui/Size";
 import noResults from "../assets/undraw_no_data_re_kwbl.svg";
 import CartContext from "../CartContext";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Search = () => {
   const { term } = useParams();
@@ -77,6 +79,7 @@ const Search = () => {
   React.useEffect(() => {
     fetchResults();
     window.scrollTo({ top: 0, behavior: "smooth" });
+    Aos.init({ duration: 400, once: true });
   }, [term]);
 
   return (
@@ -116,9 +119,9 @@ const Search = () => {
                 <option value="DEFAULT" disabled>
                   Sort
                 </option>
+                <option value="POPULARITY">Popularity</option>
                 <option value="LOW_TO_HIGH">Price, ascending</option>
                 <option value="HIGH_TO_LOW">Price, descending</option>
-                <option value="POPULARITY">Popularity</option>
               </select>
             </div>
           </div>
@@ -143,7 +146,7 @@ const Search = () => {
                   </div>
                 ))
               : results.map((poster) => (
-                  <div className="result" key={poster.id}>
+                  <div className="result" key={poster.id} data-aos="fade-up">
                     <figure
                       className="result__img--wrapper"
                       onClick={() => goToPoster(poster.id)}

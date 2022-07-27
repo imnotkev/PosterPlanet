@@ -14,6 +14,7 @@ import {
   faShoppingCart,
   faXmark,
   faMinus,
+  faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -25,7 +26,8 @@ library.add(
   faLink,
   faShoppingCart,
   faXmark,
-  faMinus
+  faMinus,
+  faAngleUp
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

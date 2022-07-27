@@ -78,6 +78,12 @@ const Nav = () => {
               Search
             </a>
           </li>
+          <li className="nav__list nav__list--hidden">
+            <div className="nav__link no-cursor">About</div>
+          </li>
+          <li className="nav__list nav__list--hidden">
+            <div className="nav__link no-cursor">Log&nbsp;in</div>
+          </li>
           <li className="nav__list">
             <a onClick={() => navigate("/cart")} className="nav__icon">
               <FontAwesomeIcon icon="basket-shopping" />
