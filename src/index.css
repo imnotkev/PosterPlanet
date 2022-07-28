@@ -210,13 +210,11 @@ nav {
 }
 
 .cart__length {
-  background-color: #f2f2f2;
-  border: 1px solid #a6a6a6;
-  color: #121212;
-  width: 18px;
+  background-color: #F2668B;
+  color: #fff;
   height: 18px;
+  width: 18px;
   font-size: 12px;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
