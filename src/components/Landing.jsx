@@ -24,7 +24,6 @@ const Landing = () => {
     );
     setBackground(data.urls.full);
     setAuthor(data.user);
-    console.log(data.user);
   }
 
   /* PASTE THIS IN INLINE-STYLE OF HEADER */

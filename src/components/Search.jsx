@@ -9,8 +9,11 @@ import noResults from "../assets/undraw_no_data_re_kwbl.svg";
 import CartContext from "../CartContext";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import useDocumentTitle from "../components/ui/dynamic-title";
 
 const Search = () => {
+  useDocumentTitle("PosterPlanet > Search");
+
   const { term } = useParams();
   const { addToCart, items, removeFromCart } = useContext(CartContext);
   const [results, setResults] = React.useState([]);

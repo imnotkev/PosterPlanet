@@ -5,8 +5,11 @@ import CartContext from "../CartContext";
 import Price from "../components/ui/Price";
 import Size from "../components/ui/Size";
 import EmptyCart from "../assets/undraw_empty_street_re_atjq.svg";
+import useDocumentTitle from "../components/ui/dynamic-title";
 
 const Cart = () => {
+  useDocumentTitle("PosterPlanet > Cart");
+
   const { removeFromCart, items } = React.useContext(CartContext);
   const navigate = useNavigate();
 

@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Price from "../components/ui/Price";
 import Size from "../components/ui/Size";
 import CartContext from "../CartContext";
+import useDocumentTitle from "../components/ui/dynamic-title";
 
 const Poster = () => {
+  useDocumentTitle(`PosterPlanet > Poster`);
+
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
   const { items } = useContext(CartContext);
