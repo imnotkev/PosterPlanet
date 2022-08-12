@@ -47,7 +47,7 @@ const Poster = () => {
               <h2 className="poster__selected--title--top">Back</h2>
             </div>
           </div>
-          <div className="row poster-row">
+          <div className="poster-row">
             {loading ? (
               <div className="poster__container">
                 <div className="poster__img--wrapper">

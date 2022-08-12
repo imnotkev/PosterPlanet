@@ -121,7 +121,7 @@ nav {
 }
 
 .nav__logo--wrapper:hover .site-name {
-  border-bottom: 2px solid #121212;
+
   transform: translateY(-2px);
 }
 
@@ -137,7 +137,7 @@ nav {
 
 .site-name {
   transition: all 100ms ease;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid #121212;
 }
 
 .site-name span {
@@ -1281,7 +1281,7 @@ footer {
   }
 
   .poster__desc {
-    width: 70%;
+    width: 92%;
     margin: 16px 0 0 0;
     align-items: center;
     text-align: center;
