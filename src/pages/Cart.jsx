@@ -43,6 +43,9 @@ const Cart = () => {
                   className="results__empty cart__empty"
                   onClick={() => navigate("/")}
                 >
+                  <h3 className="section__title empty__title">
+                    Your shopping-cart is empty!
+                  </h3>
                   <figure className="empty__img--figure">
                     <img src={EmptyCart} className="empty__img" />
                   </figure>

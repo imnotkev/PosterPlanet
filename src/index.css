@@ -706,6 +706,7 @@ header {
 
 .poster-row {
   max-width: 1300px;
+  margin: 0 auto;
 }
 
 .poster__img--wrapper {
