@@ -11,7 +11,7 @@ const GalleryImage = ({ url, text, id }) => {
       key={id}
     >
       <img src={url} alt="" className="gallery__img" loading="lazy" />
-      <span className="gallery__img--text">{text}</span>
+      {/* <span className="gallery__img--text">{text}</span> */}
     </a>
   );
 };

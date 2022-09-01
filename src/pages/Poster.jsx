@@ -34,6 +34,7 @@ const Poster = () => {
   }
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     fetchPoster();
   }, []);
 
@@ -41,16 +42,15 @@ const Poster = () => {
     <section id="poster">
       <div className="container">
         <div className="row">
-          <div className="section__header section__header--poster">
-            <div className="poster__return" onClick={() => navigate(-1)}>
-              <FontAwesomeIcon
-                icon="arrow-left"
-                className="poster__return--icon"
-              />
-              <h2 className="poster__selected--title--top">Back</h2>
-            </div>
-          </div>
           <div className="poster-row">
+            {!loading && (
+              <div className="poster__return" onClick={() => navigate(-1)}>
+                <FontAwesomeIcon
+                  icon="arrow-left"
+                  className="poster__return--icon"
+                />
+              </div>
+            )}
             {loading ? (
               <div className="poster__container">
                 <div className="poster__img--wrapper">
@@ -116,18 +116,6 @@ const Poster = () => {
                       />
                     </button>
                   )}
-
-                  <p className="poster__para">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae rem autem perferendis neque fuga necessitatibus
-                    nobis nulla qui error vel.
-                  </p>
-                  <p className="poster__para">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Neque quia accusamus cum itaque laboriosam eveniet, quisquam
-                    laborum unde dolor laudantium recusandae aliquid sit cumque
-                    ipsa delectus consequatur enim eos necessitatibus.
-                  </p>
                   <a
                     href={poster.user.links.html}
                     target="_blank"

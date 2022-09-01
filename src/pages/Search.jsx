@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import API_KEY from "../keys";
-import Price from "./ui/Price";
-import Size from "./ui/Size";
+import Price from "../components/ui/Price";
+import Size from "../components/ui/Size";
 import noResults from "../assets/undraw_no_data_re_kwbl.svg";
 import CartContext from "../CartContext";
 import Aos from "aos";
@@ -71,7 +71,7 @@ const Search = () => {
   async function fetchResults() {
     setLoading(true);
     const { data } = await axios.get(
-      `https://api.unsplash.com/search/photos?&per_page=28&query=${term}&client_id=${API_KEY}`
+      `https://api.unsplash.com/search/photos?&per_page=28&query=${term}&orientation=portrait&client_id=${API_KEY}`
     );
     setTimeout(() => {
       setResults(data.results);
@@ -80,8 +80,8 @@ const Search = () => {
   }
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     fetchResults();
-    window.scrollTo({ top: 0, behavior: "smooth" });
     Aos.init({ duration: 400, once: true });
   }, [term]);
 

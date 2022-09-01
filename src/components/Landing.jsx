@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Featured from "./Featured";
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import API_KEY from "../keys";
@@ -30,6 +30,7 @@ const Landing = () => {
   // `url(${background})`
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     fetchBackground();
   }, []);
 
